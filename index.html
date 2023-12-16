@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CodeCrafter文本充满屏幕效果</title>
+	<title>CodeCrafter文本淡入/消失效果</title>
 	<style>
-		body, html {
-			height: 100%;
-			margin: 0;
-		}
-
 		.container {
-			width: 100%;
-			height: 100%;
+			width: 400px;
+			height: 400px;
+			overflow-y: scroll;
 			padding: 20px;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
 		}
 
 		.hidden {
@@ -30,16 +22,16 @@
 </head>
 <body>
 	<div class="container">
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
+		<p>CodeCrafter</p>
 		<p class="hidden">CodeCrafter</p>
 		<p class="hidden">CodeCrafter</p>
 		<p class="hidden">CodeCrafter</p>
@@ -55,31 +47,29 @@
 	<script>
 		const container = document.querySelector('.container');
 		const hiddenElements = document.querySelectorAll('.hidden');
+		let lastScrollTop = 0;
 
-		let isScrolling = false;
+		container.addEventListener('scroll', () => {
+			const scrollTop = container.scrollTop;
 
-		function revealHiddenElements() {
-			hiddenElements.forEach(elem => {
-				const rect = elem.getBoundingClientRect();
-
-				if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-					elem.classList.add('visible');
-				}
-			});
-		}
-
-		window.addEventListener('scroll', () => {
-			if (!isScrolling) {
-				isScrolling = true;
-
-				window.requestAnimationFrame(() => {
-					revealHiddenElements();
-					isScrolling = false;
+			if (scrollTop > lastScrollTop) {
+				// 向下滚动，显示文本
+				hiddenElements.forEach(elem => {
+					if (elem.offsetTop - container.scrollTop <= container.clientHeight) {
+						elem.classList.add('visible');
+					}
+				});
+			} else {
+				// 向上滚动，隐藏文本
+				hiddenElements.forEach(elem => {
+					if (elem.offsetTop - container.scrollTop > container.clientHeight) {
+						elem.classList.remove('visible');
+					}
 				});
 			}
-		});
 
-		revealHiddenElements();
+			lastScrollTop = scrollTop;
+		});
 	</script>
 </body>
 </html>
