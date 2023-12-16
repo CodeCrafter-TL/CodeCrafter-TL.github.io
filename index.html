@@ -1,76 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>CodeCrafter Studio</title>
-	<style>
-		.container {
-			width: 400px;
-			height: 400px;
-			overflow-y: scroll;
-			padding: 20px;
-		}
+<!doctype html>
+<html lang="zh-CN">
 
-		.hidden {
-			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
-		}
+  <head>
+    <meta charset="utf-8">
+    <title>CodeCrafter Studio</title>
+    <link rel="shortcut icon" href="https://htmlpage.cn/favicon.png">
+    <style>
+      @font-face {
+        font-family: Unicons;
+        src: url(fonts/Unicons.woff2) format("woff2"), url(fonts/Unicons.woff) format("woff");
+        font-weight: 400;
+        font-style: normal;
+        font-display: block
+      }
 
-		.visible {
-			opacity: 1;
-		}
-	</style>
-</head>
-<body>
-        <p>Sign in<a href="/login/index.html">Sign in there</a></p>
-	<div class="container">
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p>CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-		<p class="hidden">CodeCrafter</p>
-	</div>
+      @font-face {
+        font-family: Custom;
+        src: url(fonts/Custom.woff2) format("woff2"), url(fonts/Custom.woff) format("woff");
+      }
 
-	<script>
-		const container = document.querySelector('.container');
-		const hiddenElements = document.querySelectorAll('.hidden');
-		let lastScrollTop = 0;
+      .img-mask.mask-1 img {
+        -webkit-mask-image: url(img/blob.svg) !important;
+        mask-image: url(img/blob.svg) !important;
+      }
 
-		container.addEventListener('scroll', () => {
-			const scrollTop = container.scrollTop;
+      .img-mask.mask-2 img {
+        -webkit-mask-image: url(img/hex.svg) !important;
+        mask-image: url(img/hex.svg) !important;
+      }
 
-			if (scrollTop > lastScrollTop) {
-				// 向下滚动，显示文本
-				hiddenElements.forEach(elem => {
-					if (elem.offsetTop - container.scrollTop <= container.clientHeight) {
-						elem.classList.add('visible');
-					}
-				});
-			} else {
-				// 向上滚动，隐藏文本
-				hiddenElements.forEach(elem => {
-					if (elem.offsetTop - container.scrollTop > container.clientHeight) {
-						elem.classList.remove('visible');
-					}
-				});
-			}
+      .img-mask.mask-3 img {
+        -webkit-mask-image: url(img/blob2.svg) !important;
+        mask-image: url(img/blob2.svg) !important;
+      }
+    </style>
+    <link rel="stylesheet" href="./css/user-style.css">
+  </head>
 
-			lastScrollTop = scrollTop;
-		});
-	</script>
-</body>
-</html>
+  <body>
+
+    <body>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="" />
+      <meta name="keywords" content="" />
+      <meta name="author" content="Lapus" />
+      <title>CodeCrafter Studio</title>
+      <link rel="shortcut icon" href="img/favicon.png" />
+      <link rel="stylesheet" href="css/plugins.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/purple.css" />
+      <link rel="preload" href="css/thicccboi.css" as="style" />
+      <div class="content-wrapper">
+        <header class="wrapper bg-soft-primary">
+          <!-- /.navbar -->
+        </header><!-- /header -->
+        <section class="wrapper bg-gradient-primary">
+          <!-- /.container -->
+        </section><!-- /section -->
+        <!-- /section -->
+        <section class="wrapper bg-light">
+          <!-- /.container -->
+        </section><!-- /section -->
+      </div><!-- /.content-wrapper -->
+      <footer class="bg-gradient-reverse-primary">
+        <!-- /.container -->
+      </footer>
+      <script src="js/plugins.js"></script>
+      <script src="js/theme.js"></script>
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" href="css/page.min.css" />
+      <header data-block-type="headers" data-id="1">
+        <div class="container"></div>
+      </header>
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" href="css/plugins.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <header id="nav-1" role="banner">
+        <div class="container">
+          <div class="header-inner">
+            <h1><a href="code crafter-tl.github.io"></a>
+              <div id="ilhwb" class="c36369">CodeCrafter<br /></div>
+            </h1>
+            <nav role="navigation">
+              <ul>
+                <li><a href="codecrafter-tl.github.io" class="active">首页</a></li>
+                <li><a href="http://116.198.35.73:10006">弃坑啦</a></li>
+                <li><a href="codecrafter-tl.github.io/download">下载</a></li>
+                <li></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <section class="footer-1">
+        <div class="container">
+          <div class="media-container-row align-center">
+            <div class="col-12">
+              <p class="mbr-text">© Copyright 2022 ~ 2023 CodeCrafter Studio - All Rights Reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </body>
+  </body>
+  <html>
