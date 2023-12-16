@@ -6,10 +6,6 @@ body {
     margin: 0;
 }
 
-#nav-1 {
-    background-color: #81cfdf;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -266,4 +262,13 @@ p {
 
 .c36369 {
     padding: 10px;
+}
+
+.c1622 {
+    background-color: #81cfdf;
+}
+
+.c2459 {
+    height: 591px;
+    width: 1028px;
 }
