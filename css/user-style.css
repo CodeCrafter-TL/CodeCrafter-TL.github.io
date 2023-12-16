@@ -264,11 +264,44 @@ p {
     padding: 10px;
 }
 
+.htmlpage-row {
+    display: table;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.htmlpage-cell {
+    width: 8%;
+    display: table-cell;
+    height: 75px;
+}
+
 .c1622 {
     background-color: #81cfdf;
 }
 
-.c2459 {
-    height: 591px;
-    width: 1028px;
+.c2652 {
+    color: black;
+    width: 524px;
+    height: 524px;
+}
+
+.c3776 {
+    padding: 10px;
+    text-align: center;
+}
+
+.c3915 {
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .htmlpage-cell {
+        width: 100%;
+        display: block;
+    }
 }
