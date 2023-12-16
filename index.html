@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodeCrafter文本充满屏幕效果</title>
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+
+		.container {
+			width: 100%;
+			height: 100%;
+			padding: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hidden {
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+
+		.visible {
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+		<p class="hidden">CodeCrafter</p>
+	</div>
+
+	<script>
+		const container = document.querySelector('.container');
+		const hiddenElements = document.querySelectorAll('.hidden');
+
+		let isScrolling = false;
+
+		function revealHiddenElements() {
+			hiddenElements.forEach(elem => {
+				const rect = elem.getBoundingClientRect();
+
+				if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+					elem.classList.add('visible');
+				}
+			});
+		}
+
+		window.addEventListener('scroll', () => {
+			if (!isScrolling) {
+				isScrolling = true;
+
+				window.requestAnimationFrame(() => {
+					revealHiddenElements();
+					isScrolling = false;
+				});
+			}
+		});
+
+		revealHiddenElements();
+	</script>
+</body>
+</html>
