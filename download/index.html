@@ -43,11 +43,32 @@
         opacity: 0;
         animation: popupAnimation 0.3s forwards;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
       }
-  
+
       .popup.hide {
         animation: closeAnimation 0.3s forwards;
       }
+
+      .popup a {
+        display: inline-block;
+        background-color: #007AFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .popup a:hover {
+        background-color: #1478F0;
+      }
+
   
       @keyframes popupAnimation {
         from {
@@ -76,6 +97,20 @@
         right: 10px;
         cursor: pointer;
       }
+      button {
+        background-color: #007AFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+      }
+      button:hover {
+        background-color: #1478F0;
+        cursor: pointer;
+      }
+
+
     </style>
     <link rel="stylesheet" href="./css/user-style.css">
   </head>
