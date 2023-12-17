@@ -70,6 +70,12 @@
           transform: translate(-50%, -100%);
         }
       }
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+      }
     </style>
     <link rel="stylesheet" href="./css/user-style.css">
   </head>
@@ -144,6 +150,7 @@
               <h1>Finder Beta 4.3</h1>
               <button onclick="showPopup()">现在下载</button>
               <div id="popup" class="popup hide" style="display: none;">
+                <div class="close-btn" onclick="closePopup()">×</div>
                 <p><a href="https://www.github.com/codecrafter-tl/CodeCrafter-macOS-Finder/">Github</a></p>
                 <p><a href="https://wwlw.lanzouj.com/i9IE51i80xij">蓝奏云</a></p>
               </div>
