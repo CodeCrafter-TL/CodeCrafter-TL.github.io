@@ -32,6 +32,44 @@
         -webkit-mask-image: url(img/blob2.svg) !important;
         mask-image: url(img/blob2.svg) !important;
       }
+      .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 200px;
+        background-color: #fff;
+        opacity: 0;
+        animation: popupAnimation 0.3s forwards;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+  
+      .popup.hide {
+        animation: closeAnimation 0.3s forwards;
+      }
+  
+      @keyframes popupAnimation {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -100%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+  
+      @keyframes closeAnimation {
+        from {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        to {
+          opacity: 0;
+          transform: translate(-50%, -100%);
+        }
+      }
     </style>
     <link rel="stylesheet" href="./css/user-style.css">
   </head>
@@ -104,7 +142,11 @@
           <div class="row justify-content-end">
             <div class="col-12 col-md-5 text-center">
               <h1>Finder Beta 4.3</h1>
-              <p class="mt-4"><a href="https://www.GitHub.com/CodeCrafter-TL/CodeCrafter-macOS-Finder">现在下载 &gt;</a></p>
+              <button onclick="showPopup()">现在下载</button>
+              <div id="popup" class="popup hide" style="display: none;">
+                <p><a href="https://www.github.com/codecrafter-tl/CodeCrafter-macOS-Finder/">Github</a></p>
+                <p><a href="https://wwlw.lanzouj.com/i9IE51i80xij">蓝奏云</a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -119,6 +161,21 @@
           </div>
         </div>
       </section>
+      <script>
+        function showPopup() {
+          var popup = document.getElementById("popup");
+          popup.style.display = "block";
+          popup.classList.remove("hide");
+        }
+    
+        function closePopup() {
+          var popup = document.getElementById("popup");
+          popup.classList.add("hide");
+          setTimeout(function(){
+            popup.style.display = "none";
+          }, 300);
+        }
+      </script>
     </body>
   </body>
   <html>
