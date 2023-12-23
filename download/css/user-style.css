@@ -309,17 +309,6 @@ p {
     z-index: 1;
 }
 
-a {
-    color: rgb(0, 123, 255);
-    text-decoration-line: none;
-    background-color: transparent;
-}
-
-a:hover {
-    color: rgb(0, 86, 179);
-    text-decoration-line: underline;
-}
-
 .row.justify-content-end {
     text-align: center;
 }
