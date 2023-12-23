@@ -104,12 +104,87 @@
         border-radius: 5px;
         padding: 10px 20px;
         font-size: 18px;
+        transition: opacity 0.5s ease-in-out;
       }
       button:hover {
         background-color: #1478F0;
         cursor: pointer;
       }
 
+      a {
+        display: inline-block;
+        background-color: #007AFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      a:hover {
+        background-color: #1478F0;
+      }
+
+      .fdb-block {
+        position: relative;
+        margin-bottom: 160px;
+      }
+
+      .fdb-block img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+      }
+
+      .links-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        position: relative;
+        z-index: 0;
+      }
+
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .fdb-block img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3) inset;
+      }
+      .container-hidden {
+        width: 50%;
+        height: 100vh; /* 设置容器高度为整个视口高度 */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .visible {
+        opacity: 1;
+      }
 
     </style>
     <link rel="stylesheet" href="./css/user-style.css">
@@ -125,21 +200,6 @@
       <link rel="stylesheet" href="css/style.css" />
       <link rel="stylesheet" href="css/purple.css" />
       <link rel="preload" href="css/thicccboi.css" as="style" />
-      <div class="content-wrapper">
-        <header class="wrapper bg-soft-primary">
-          <!-- /.navbar -->
-        </header><!-- /header -->
-        <section class="wrapper bg-gradient-primary">
-          <!-- /.container -->
-        </section><!-- /section -->
-        <!-- /section -->
-        <section class="wrapper bg-light">
-          <!-- /.container -->
-        </section><!-- /section -->
-      </div><!-- /.content-wrapper -->
-      <footer class="bg-gradient-reverse-primary">
-        <!-- /.container -->
-      </footer>
       <script src="js/plugins.js"></script>
       <script src="js/theme.js"></script>
       <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -155,14 +215,14 @@
       <header id="nav-1" role="banner" class="c1622">
         <div class="container">
           <div class="header-inner">
-            <h1><a href="code crafter-tl.github.io"></a>
+            <h1>
               <div id="ilhwb" class="c36369">CodeCrafter<br /></div>
             </h1>
             <nav role="navigation">
               <ul>
-                <li><a href="https://codecrafter-tl.github.io" class="active">首页</a></li>
+                <li><a href="../index.html" class="active">首页</a></li>
                 <li><a href="http://116.198.35.73:10006">弃坑啦</a></li>
-                <li><a href="https://codecrafter-tl.github.io/download">下载</a></li>
+                <li><a href="./index.html">下载</a></li>
                 <li></li>
               </ul>
             </nav>
