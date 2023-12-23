@@ -129,6 +129,7 @@
 
       .fdb-block {
         position: relative;
+        margin-bottom: 160px;
       }
 
       .fdb-block img {
@@ -163,6 +164,24 @@
         height: 100%;
         border-radius: 10px;
         box-shadow: 0 0 20px rgba(0,0,0,0.3) inset;
+      }
+      .container-hidden {
+        width: 50%;
+        height: 100vh; /* 设置容器高度为整个视口高度 */
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+
+      .visible {
+        opacity: 1;
       }
 
     </style>
@@ -225,9 +244,9 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="links-container">
-                <h1>CC-铁路旁的小学生</h1>
-                <p><a href="https://space.bilibili.com/437436764">BiliBili</a></p>
-                <p><a href="https://github.com/codecrafter-tl">Github</a></p>
+                <h1 class="hidden">CC-铁路旁的小学生</h1>
+                <p class="hidden"><a href="https://space.bilibili.com/437436764">BiliBili</a></p>
+                <p class="hidden"><a href="https://github.com/codecrafter-tl">Github</a></p>
               </div>
             </div>
           </div>
@@ -238,10 +257,10 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="links-container">
-                <h1>真_人工智障</h1>
-                <p><a href="http://rgzz.likesyou.org/">网站</a></p>
-                <p><a href="https://github.com/totowang-hhh/">Github</a></p>
-                <p><a href="https://space.bilibili.com/400855656">BiliBili</a></p>
+                <h1 class="hidden">真_人工智障</h1>
+                <p class="hidden"><a href="http://rgzz.likesyou.org/">网站</a></p>
+                <p class="hidden"><a href="https://github.com/totowang-hhh/">Github</a></p>
+                <p class="hidden"><a href="https://space.bilibili.com/400855656">BiliBili</a></p>
               </div>
             </div>
           </div>
@@ -252,8 +271,8 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="links-container">
-                <h1>aaaGaoxuan</h1>
-                <p><a href="https://github.com/speedyGaoxuan/">Github</a></p>
+                <h1 class="hidden">aaaGaoxuan</h1>
+                <p class="hidden"><a href="https://github.com/speedyGaoxuan/">Github</a></p>
               </div>
             </div>
           </div>
@@ -264,8 +283,8 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <div class="links-container">
-                <h1>NTF404</h1>
-                <p><a href="https://space.bilibili.com/1913550415/">BiliBili</a></p>
+                <h1 class="hidden">NTF404</h1>
+                <p class="hidden"><a href="https://space.bilibili.com/1913550415/">BiliBili</a></p>
               </div>
             </div>
           </div>
@@ -295,6 +314,32 @@
             popup.style.display = "none";
           }, 300);
         }
+        const container = document.querySelector('.container');
+        const hiddenElements = document.querySelectorAll('.hidden');
+        let lastScrollTop = 0;
+      
+        function revealHiddenElements() {
+          hiddenElements.forEach(elem => {
+            const rect = elem.getBoundingClientRect();
+            const isInView = (rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight);
+      
+            if (isInView) {
+              if (!elem.classList.contains('visible')) {
+                // 当文本进入视口内，显示文本
+                elem.classList.add('visible');
+              }
+            } else {
+              if (elem.classList.contains('visible')) {
+                // 文本离开视口，隐藏文本
+                elem.classList.remove('visible');
+              }
+            }
+          });
+        }
+      
+        window.addEventListener('scroll', revealHiddenElements);
+      
+        revealHiddenElements(); // 初始时也触发一次，以显示可见的文本
       </script>
     </body>
   </body>
