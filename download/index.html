@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>CodeCrafter Studio</title>
+    <title>CodeCrafter Studio - 下载</title>
     <style>
       @font-face {
         font-family: Unicons;
@@ -104,6 +104,7 @@
         border-radius: 5px;
         padding: 10px 20px;
         font-size: 18px;
+        transition: opacity 0.5s ease-in-out;
       }
       button:hover {
         background-color: #1478F0;
@@ -155,6 +156,7 @@
       h1 {
         position: relative;
         z-index: 1;
+        transition: opacity 0.5s ease-in-out;
       }
 
       .fdb-block img {
@@ -198,9 +200,6 @@
       <link rel="stylesheet" href="css/style.css" />
       <link rel="stylesheet" href="css/purple.css" />
       <link rel="preload" href="css/thicccboi.css" as="style" />
-      <footer class="bg-gradient-reverse-primary">
-        <!-- /.container -->
-      </footer>
       <script src="js/plugins.js"></script>
       <script src="js/theme.js"></script>
       <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -221,9 +220,9 @@
             </h1>
             <nav role="navigation">
               <ul>
-                <li><a href="./index.html" class="active">首页</a></li>
+                <li><a href="../index.html" class="active">首页</a></li>
                 <li><a href="http://116.198.35.73:10006">弃坑啦</a></li>
-                <li><a href="./download/index.html">下载</a></li>
+                <li><a href="./index.html">下载</a></li>
                 <li></li>
               </ul>
             </nav>
@@ -239,52 +238,16 @@
       <script src="js/plugins.js"></script>
       <script src="js/theme.js"></script>
       <link rel="stylesheet" href="css/bootstrap.min.css" />
-      <section class="fdb-block">
+      <section data-block-type="contents" data-id="3" draggable="true" class="fdb-block">
         <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="links-container">
-                <h1 class="hidden">CC-铁路旁的小学生</h1>
-                <p class="hidden"><a href="https://space.bilibili.com/437436764">BiliBili</a></p>
-                <p class="hidden"><a href="https://github.com/codecrafter-tl">Github</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="fdb-block">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="links-container">
-                <h1 class="hidden">真_人工智障</h1>
-                <p class="hidden"><a href="http://rgzz.likesyou.org/">网站</a></p>
-                <p class="hidden"><a href="https://github.com/totowang-hhh/">Github</a></p>
-                <p class="hidden"><a href="https://space.bilibili.com/400855656">BiliBili</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="fdb-block">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="links-container">
-                <h1 class="hidden">aaaGaoxuan</h1>
-                <p class="hidden"><a href="https://github.com/speedyGaoxuan/">Github</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="fdb-block">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="links-container">
-                <h1 class="hidden">NTF404</h1>
-                <p class="hidden"><a href="https://space.bilibili.com/1913550415/">BiliBili</a></p>
+          <div class="row justify-content-end">
+            <div class="col-12 col-md-5 text-center">
+              <h1>Finder Beta 4.3</h1>
+              <button onclick="showPopup()">现在下载</button>
+              <div id="popup" class="popup hide" style="display: none;">
+                <div class="close-btn" onclick="closePopup()">×</div>
+                <p><a href="https://github.com/codecrafter-tl/CodeCrafter-macOS-Finder/">Github</a></p>
+                <p><a href="https://wwlw.lanzouj.com/i9IE51i80xij">蓝奏云</a></p>
               </div>
             </div>
           </div>
@@ -314,34 +277,7 @@
             popup.style.display = "none";
           }, 300);
         }
-        const container = document.querySelector('.container');
-        const hiddenElements = document.querySelectorAll('.hidden');
-        let lastScrollTop = 0;
-      
-        function revealHiddenElements() {
-          hiddenElements.forEach(elem => {
-            const rect = elem.getBoundingClientRect();
-            const isInView = (rect.top >= 0 && rect.top <= window.innerHeight) || (rect.bottom >= 0 && rect.bottom <= window.innerHeight);
-      
-            if (isInView) {
-              if (!elem.classList.contains('visible')) {
-                // 当文本进入视口内，显示文本
-                elem.classList.add('visible');
-              }
-            } else {
-              if (elem.classList.contains('visible')) {
-                // 文本离开视口，隐藏文本
-                elem.classList.remove('visible');
-              }
-            }
-          });
-        }
-      
-        window.addEventListener('scroll', revealHiddenElements);
-      
-        revealHiddenElements(); // 初始时也触发一次，以显示可见的文本
       </script>
     </body>
   </body>
   <html>
-    
