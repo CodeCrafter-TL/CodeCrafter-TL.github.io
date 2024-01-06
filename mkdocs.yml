@@ -1,0 +1,70 @@
+site_name: CodeCrafter
+site_url: https://codecrafter-tl.github.io/
+site_author: CodeCrafter-TL
+copyright: Copyright 2023 ~ 2024 CodeCrafter Studio.
+remote_branch: gh-pages
+
+theme: # 主题设置
+  name: material # 第三方主题名称
+  language: zh # material 语言
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - navigation.expand
+    - navigation.footer
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme)" # 默认主题
+      primary: light green # 默认标题栏颜色
+      accent: orange # 默认链接高亮颜色
+  font: # 字体
+    text: Microsoft YaHei # 文本
+    code: consolas # 代码
+  logo: "logo.png" # 徽标（要加上引号）
+  favicon: "logo.png" # 网站图标
+  icon:
+    repo: fontawesome/brands/github
+    # admonition:  # 特殊注释
+    #   note: octicons/tag-16  # 笔记
+    #   abstract: octicons/checklist-16
+    #   info: octicons/info-16  # 说明
+    #   tip: octicons/squirrel-16  # 提示
+    #   success: octicons/check-16  # 成功
+    #   question: octicons/question-16  # 提问
+    #   warning: octicons/alert-16  # 警告
+    #   failure: octicons/x-circle-16  # 失败
+    #   danger: octicons/zap-16  # 危险
+    #   bug: octicons/bug-16  # BUG
+    #   example: octicons/beaker-16  # 举例
+    #   quote: octicons/quote-16  # 引用
+
+plugins: # 插件
+  - search: # 唯一官方附带插件
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+
+nav:
+  - Home - 主页: 
+    - Profile - 简介: index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/CodeCrafter-TL/
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/437436764
